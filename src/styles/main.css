@@ -1,0 +1,37 @@
+@import url(./header-footer.css);
+@import url(./inputs.css);
+
+/* ---------------     Reboot     --------------- */
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/* color: unset; */
+}
+
+/* ---------------     /Reboot     --------------- */
+/* ---------------     Utilities & Universals     --------------- */
+
+:root {
+	--eg-var: red;
+}
+
+body {
+	min-height: 100svh;
+	display: flex;
+	flex-direction: column;
+}
+
+/* ---------------     /Utilities & Universals     --------------- */
+
+/* ---------------     Main     --------------- */
+
+main {
+	flex: 1;
+	padding: 10px;
+}
+
+/* ---------------     /Main     --------------- */
