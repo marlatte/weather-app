@@ -1,7 +1,7 @@
 {
-	"name": "template-rincewind",
+	"name": "marlatte-weather-app",
 	"version": "1.0.0",
-	"description": "template JSON",
+	"description": "A weather forecast site where users can search for a specific location and toggle displaying the data in Fahrenheit or Celsius.",
 	"private": true,
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
