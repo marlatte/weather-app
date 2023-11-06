@@ -1,7 +1,7 @@
-# template-rincewind
-Template files for solo projects to go along with my Rincewind workflow.
+# Weather App
 
-Full requirements from The Odin Project can be [found here](https://www.theodinproject.com).
+A weather forecast site where users can search for a specific location and toggle displaying the data in Fahrenheit or Celsius.
 
+Full requirements from The Odin Project can be [found here](https://www.theodinproject.com/lessons/node-path-javascript-weather-app#assignment).
 
 👉 [Live Demo](#) 👈
