@@ -45,8 +45,8 @@ function updateDisplay() {
 	const currentCity = document.querySelector('.city');
 	const currentIcon = document.querySelector('.current-icon');
 	const currentTemp = document.querySelector('.current-temp');
-	const dayOneTitle = document.querySelector('.day-1-title');
-	const dayTwoTitle = document.querySelector('.day-2-title');
+	const dayOneTitle = document.querySelector('.day-1 .title');
+	const dayTwoTitle = document.querySelector('.day-2 .title');
 
 	const { location, current, forecast } = currentData;
 
@@ -55,6 +55,7 @@ function updateDisplay() {
 		? `${current.temp_f}° F`
 		: `${current.temp_c}° C`;
 	currentIcon.src = `https:${current.condition.icon}`;
+	currentIcon.alt = `${current.condition.text} weather icon`;
 
 	dayOneTitle.textContent = formatDate(forecast.forecastday[1].date);
 	dayTwoTitle.textContent = formatDate(forecast.forecastday[2].date);
@@ -62,6 +63,7 @@ function updateDisplay() {
 
 async function changeCity(targetCity) {
 	currentData = await getWeatherData(targetCity);
+	console.log(currentData);
 	updateDisplay();
 	// Remove loading icon
 }
