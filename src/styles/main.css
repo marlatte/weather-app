@@ -32,6 +32,32 @@ body {
 main {
 	flex: 1;
 	padding: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.current-info {
+	min-height: 250px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.city {
+	font-size: 40px;
+}
+
+.current-temp {
+	font-weight: bold;
+	font-size: 40px;
+}
+
+.forecast {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
 }
 
 /* ---------------     /Main     --------------- */

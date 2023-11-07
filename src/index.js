@@ -60,13 +60,10 @@ function updateDisplay() {
 	dayTwoTitle.textContent = formatDate(forecast.forecastday[2].date);
 }
 
-function changeCity(targetCity) {
-	getWeatherData(targetCity).then((data) => {
-		currentData = data;
-		updateDisplay();
-		console.log(currentData);
-		// Remove loading icon
-	});
+async function changeCity(targetCity) {
+	currentData = await getWeatherData(targetCity);
+	updateDisplay();
+	// Remove loading icon
 }
 
 function handleSearch(e) {
