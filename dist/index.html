@@ -10,7 +10,7 @@
 		<header><h1>Weather Forecast</h1></header>
 		<main>
 			<section class="inputs">
-				<div class="search-item">
+				<form class="search-item">
 					<label for="search-bar">Q</label>
 					<input
 						type="search"
@@ -18,10 +18,15 @@
 						id="search-bar"
 						placeholder="Search..."
 					/>
-				</div>
+				</form>
 				<div class="degree-selector">
 					<div class="button b2" id="button-10">
-						<input type="checkbox" class="checkbox" id="temp-scale" />
+						<input
+							type="checkbox"
+							class="checkbox"
+							id="temp-scale"
+							checked
+						/>
 						<div class="knobs">
 							<span>C</span>
 						</div>
@@ -31,8 +36,8 @@
 			</section>
 			<section class="current-info">
 				<h2 class="city">New York City</h2>
-				<div class="current-icon"></div>
-				<div class="current-temp">54°</div>
+				<img class="current-icon" src=" "></img>
+				<div class="current-temp">54° F</div>
 			</section>
 			<section class="forcast">
 				<div class="day-0">
