@@ -41,14 +41,12 @@ function formatDate(forecastDay) {
 	return daysOfTheWeek[shortDay];
 }
 
-function updateDisplay() {
+function setCurrentInfo() {
 	const currentCity = document.querySelector('.city');
 	const currentIcon = document.querySelector('.current-icon');
 	const currentTemp = document.querySelector('.current-temp');
-	const dayOneTitle = document.querySelector('.day-1 .title');
-	const dayTwoTitle = document.querySelector('.day-2 .title');
 
-	const { location, current, forecast } = currentData;
+	const { location, current } = currentData;
 
 	currentCity.textContent = location.name;
 	currentTemp.textContent = tempScale.checked
@@ -56,16 +54,40 @@ function updateDisplay() {
 		: `${current.temp_c}° C`;
 	currentIcon.src = `https:${current.condition.icon}`;
 	currentIcon.alt = `${current.condition.text} weather icon`;
+}
 
-	dayOneTitle.textContent = formatDate(forecast.forecastday[1].date);
-	dayTwoTitle.textContent = formatDate(forecast.forecastday[2].date);
+function setForecastInfo() {
+	[0, 1, 2].forEach((dayNum) => {
+		const forecast = currentData.forecast.forecastday[dayNum];
+		const title = document.querySelector(`.day-${dayNum} .title`);
+		const icon = document.querySelector(`.day-${dayNum} .icon`);
+		const low = document.querySelector(`.day-${dayNum} .daily.low .num`);
+		const high = document.querySelector(`.day-${dayNum} .daily.high .num`);
+
+		title.textContent = !dayNum ? 'Today' : formatDate(forecast.date);
+
+		icon.src = `https:${forecast.day.condition.icon}`;
+
+		low.textContent = tempScale.checked
+			? `${forecast.day.mintemp_f}° F`
+			: `${forecast.day.mintemp_c}° C`;
+
+		high.textContent = tempScale.checked
+			? `${forecast.day.maxtemp_f}° F`
+			: `${forecast.day.maxtemp_c}° C`;
+	});
+}
+
+function updateDisplay() {
+	setCurrentInfo();
+	setForecastInfo();
+	// Remove loading icon
 }
 
 async function changeCity(targetCity) {
 	currentData = await getWeatherData(targetCity);
 	console.log(currentData);
 	updateDisplay();
-	// Remove loading icon
 }
 
 function handleSearch(e) {

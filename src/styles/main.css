@@ -60,4 +60,27 @@ main {
 	justify-content: space-evenly;
 }
 
+.forecast > * {
+	width: min(400px, 80%);
+}
+
+.forecast .info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.forecast .daily {
+	min-width: 60px;
+	text-align: center;
+}
+
+.forecast .low {
+	color: blue;
+}
+
+.forecast .high {
+	color: red;
+}
+
 /* ---------------     /Main     --------------- */
