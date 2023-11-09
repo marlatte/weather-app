@@ -1,7 +1,6 @@
 .inputs {
 	display: flex;
 	gap: 5px;
-	padding: 5px;
 }
 
 .search-item {

@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Marlatte Weather App</title>
+		<script src="https://kit.fontawesome.com/c921e091ad.js" crossorigin="anonymous"></script>
 	</head>
 
 	<body>
@@ -11,7 +12,9 @@
 		<main>
 			<section class="inputs">
 				<form class="search-item">
-					<label for="search-bar">Q</label>
+					<label for="search-bar">
+						<i class="fa-solid fa-magnifying-glass"></i>
+					</label>
 					<input
 						type="search"
 						name="search"
@@ -35,9 +38,12 @@
 				</div>
 			</section>
 			<section class="current-info">
-				<h2 class="city">New York City</h2>
+				<div class="location">
+					<h2 class="city">City</h2>
+					<h4 class="country">Country</h4>
+				</div>
 				<img class="current-icon" src=" "></img>
-				<div class="current-temp">54° F</div>
+				<div class="current-temp">Temp</div>
 			</section>
 			<section class="forecast">
 				<div class="day-0">
@@ -85,5 +91,11 @@
 			</section>
 		</main>
 		<footer>Walker Marlatt</footer>
+		<dialog>
+			<div class="spinner-container">
+				<i class="fa-solid fa-spinner fa-spin"></i>
+			</div>
+			<h3>Loading Weather</h3>
+		</dialog>
 	</body>
 </html>

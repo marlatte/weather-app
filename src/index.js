@@ -2,6 +2,7 @@ import './styles/main.css';
 
 const searchForm = document.querySelector('form.search-item');
 const tempScale = document.querySelector('#temp-scale');
+const dialog = document.querySelector('dialog');
 
 let currentData;
 
@@ -43,12 +44,14 @@ function formatDate(forecastDay) {
 
 function setCurrentInfo() {
 	const currentCity = document.querySelector('.city');
+	const currentCountry = document.querySelector('.country');
 	const currentIcon = document.querySelector('.current-icon');
 	const currentTemp = document.querySelector('.current-temp');
 
 	const { location, current } = currentData;
 
 	currentCity.textContent = location.name;
+	currentCountry.textContent = location.country;
 	currentTemp.textContent = tempScale.checked
 		? `${current.temp_f}° F`
 		: `${current.temp_c}° C`;
@@ -81,7 +84,7 @@ function setForecastInfo() {
 function updateDisplay() {
 	setCurrentInfo();
 	setForecastInfo();
-	// Remove loading icon
+	dialog.close();
 }
 
 async function changeCity(targetCity) {
@@ -94,7 +97,8 @@ function handleSearch(e) {
 	e.preventDefault();
 	const searchBar = document.querySelector('#search-bar');
 
-	// Show loading icon
+	dialog.showModal();
+	dialog.blur();
 	changeCity(searchBar.value);
 
 	searchBar.value = '';
