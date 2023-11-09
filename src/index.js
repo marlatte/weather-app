@@ -22,8 +22,7 @@ async function getWeatherData(targetCity) {
 		const weatherData = await response.json();
 		return weatherData;
 	} catch (err) {
-		console.log(err);
-		return err;
+		throw new Error(err);
 	}
 }
 
@@ -96,7 +95,6 @@ function updateDisplay() {
 
 async function changeCity(targetCity) {
 	currentData = await getWeatherData(targetCity);
-	console.log(currentData);
 	updateDisplay();
 }
 
