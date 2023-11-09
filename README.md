@@ -4,4 +4,4 @@ A weather forecast site where users can search for a specific location and toggl
 
 Full requirements from The Odin Project can be [found here](https://www.theodinproject.com/lessons/node-path-javascript-weather-app#assignment).
 
-👉 [Live Demo](#) 👈
+👉 [Live Demo](https://marlatte.github.io/weather-app/) 👈
