@@ -8,7 +8,9 @@
 	<script defer src="index.bundle.js"></script></head>
 
 	<body>
-		<header><h1>Weather Forecast</h1></header>
+		<header>
+			<h1>Marlatte Weather Forecast</h1>
+		</header>
 		<main>
 			<section class="inputs">
 				<form class="search-item">
@@ -40,7 +42,7 @@
 			<section class="current-info">
 				<div class="location">
 					<h2 class="city">City</h2>
-					<h4 class="country">Country</h4>
+					<h3 class="country">Country</h3>
 				</div>
 				<img class="current-icon" src=" "></img>
 				<div class="current-temp">Temp</div>
@@ -49,39 +51,41 @@
 				<div class="day-0">
 					<h3 class="title">Today</h3>
 					<div class="info">
-						<img src="" alt="" class="icon">
 						<div class="daily low">
 							<p>Low:</p>
 							<p class="num">45</p>
 						</div>
+						<img src="" alt="" class="icon">
 						<div class="daily high">
 							<p>High:</p>
 							<p class="num">70</p>
 						</div>
 					</div>
 				</div>
+				<div class="spacer"></div>
 				<div class="day-1">
 					<h3 class="title">Tuesday</h3>
 					<div class="info">
-						<img src="" alt="" class="icon">
 						<div class="daily low">
 							<p>Low:</p>
 							<p class="num">45</p>
 						</div>
+						<img src="" alt="" class="icon">
 						<div class="daily high">
 							<p>High:</p>
 							<p class="num">70</p>
 						</div>
 					</div>
 				</div>
+				<div class="spacer"></div>
 				<div class="day-2">
 					<h3 class="title">Wednesday</h3>
 					<div class="info">
-						<img src="" alt="" class="icon">
 						<div class="daily low">
 							<p>Low:</p>
 							<p class="num">45</p>
 						</div>
+						<img src="" alt="" class="icon">
 						<div class="daily high">
 							<p>High:</p>
 							<p class="num">70</p>
@@ -90,12 +94,18 @@
 				</div>
 			</section>
 		</main>
-		<footer>Walker Marlatt</footer>
+		<footer>
+			<p>Walker</p>
+			<a href="https://github.com/marlatte" target="_blank"
+				><i class="fa fa-github"></i
+			></a>
+			<p>Marlatt</p>
+		</footer>
 		<dialog>
 			<div class="spinner-container">
 				<i class="fa-solid fa-spinner fa-spin"></i>
 			</div>
-			<h3>Loading Weather</h3>
+			<h3>Loading: <span id="load-search"></span></h3>
 		</dialog>
 	</body>
 </html>
