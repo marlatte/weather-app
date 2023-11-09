@@ -42,6 +42,13 @@ function formatDate(forecastDay) {
 	return daysOfTheWeek[shortDay];
 }
 
+function makeTitleCase(string) {
+	return string
+		.split(' ')
+		.map((word) => word[0].toUpperCase() + word.slice(1))
+		.join(' ');
+}
+
 function setCurrentInfo() {
 	const currentCity = document.querySelector('.city');
 	const currentCountry = document.querySelector('.country');
@@ -96,9 +103,12 @@ async function changeCity(targetCity) {
 function handleSearch(e) {
 	e.preventDefault();
 	const searchBar = document.querySelector('#search-bar');
+	const searchLoad = document.getElementById('load-search');
 
+	searchLoad.textContent = makeTitleCase(searchBar.value);
 	dialog.showModal();
 	dialog.blur();
+
 	changeCity(searchBar.value);
 
 	searchBar.value = '';

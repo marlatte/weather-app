@@ -13,6 +13,10 @@
 	/* color: unset; */
 }
 
+a {
+	color: unset;
+}
+
 /* ---------------     /Reboot     --------------- */
 /* ---------------     Utilities & Universals     --------------- */
 
@@ -35,6 +39,8 @@ main {
 	padding: 10px;
 	display: flex;
 	flex-direction: column;
+	width: min(640px, 100%);
+	margin: auto;
 }
 
 .current-info {
@@ -66,7 +72,12 @@ main {
 }
 
 .forecast > * {
-	width: min(400px, 80%);
+	margin: 0 10px;
+}
+
+.forecast .spacer {
+	height: 1px;
+	background-color: lightgrey;
 }
 
 .forecast .info {
